@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="init()">
+    <header class=" main-header flex align-center space-between">
+        <div class="logo"><img src="imgs/LOGO/LOGO.png"></div>
+        <ul class="nav-bar flex clean-list">
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">My Mems</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </header>
+    <section class="filter-bar">filter</section>
+    <main class="main-sction">
+        <div class="gallery"></div>
+        <div class="meme-maker">
+            <canvas class="meme-canvas"></canvas>
+            <div class="meme-maker-continer">
+                <label>firstline</label>
+                <input type="text" name="txt-input-first">
+                <button onclick="OnAddtext()" class="addText"><img src="DESIGN/ICONS/add.png"> </button>
+                <label>scoundline</label>
+                <input type="text" name="txt-input-secound">
+                <button onclick="OnAddtextToSecound()" class="addText"><img src="DESIGN/ICONS/add.png"> </button>
+                <button onclick="upSize()" class="addText"><img src="DESIGN/ICONS/increase font - icon.png"> </button>
+                <button onclick="downSize()" class="addText"><img src="DESIGN/ICONS/decrease font - icon.png"> </button>
+                <button onclick="upPos()" class="addText"><img src="DESIGN/ICONS/up.png"> </button>
+                <button onclick="downPos()" class="addText"><img src="DESIGN/ICONS/down.png"> </button>
+                <button onclick="downPos()" class="addText"><img
+                        src="DESIGN/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"> </button>
+            </div>
+        </div>
+    </main>
+    <section class="info">info</section>
+    <footer class="main-footer flex align-center">
+        <div class="logo"><img src="imgs/LOGO/LOGO.png"></div>
+        <p>sdsdsdssd</p>
+    </footer>
+</body>
+<script src="js/imgs-service.js"></script>
+<script src="js/meme-service.js"></script>
+<script src="js/main.js"></script>
+
+</html>
