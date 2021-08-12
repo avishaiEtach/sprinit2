@@ -8,16 +8,8 @@ var gCurrrctImg
 
 function init() {
     renderImges()
-    var elTxt = document.querySelector('[name=txt-input-first]')
-    elTxt.addEventListener('input', function (evt) {
-        if (gMeme.selectedLineIdx != -1) {
-            gMeme.lines[(gMeme.selectedLineIdx)].txt = elTxt.value
-            renderCanvas()
-        } else {
-            OnAddtext()
-        }
-    });
 }
+
 
 
 
@@ -40,6 +32,15 @@ function showCanvas(el) {
 
 }
 
+function getTxt(el) {
+    if (!el) return
+    if (gMeme.selectedLineIdx != -1) {
+        gMeme.lines[(gMeme.selectedLineIdx)].txt = el.value
+        renderCanvas()
+    } else {
+        OnAddtext()
+    }
+}
 
 function colorPiker(el) {
     gMeme.lines[gMeme.selectedLineIdx].color = el.value
