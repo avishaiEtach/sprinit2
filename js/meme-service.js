@@ -19,9 +19,9 @@ function getLineObj(txt) {
 
     var line = {
         txt: txt,
-        size: 40,
+        size: 30,
         align: 'left',
-        color: 'red',
+        color: 'black',
         x: gx,
         y: gy
     }
@@ -69,7 +69,7 @@ function upPos() {
     if (gMeme.selectedLineIdx === -1)
         return
 
-    gMeme.lines[gMeme.selectedLineIdx].y--
+    gMeme.lines[gMeme.selectedLineIdx].y -= 10
     renderCanvas()
 }
 
@@ -77,9 +77,39 @@ function downPos() {
     if (gMeme.selectedLineIdx === -1)
         return
 
-    gMeme.lines[gMeme.selectedLineIdx].y++
+    gMeme.lines[gMeme.selectedLineIdx].y += 10
     renderCanvas()
 }
+
+function alignToLeft() {
+    if (gMeme.selectedLineIdx === -1)
+        return
+    gMeme.lines[gMeme.selectedLineIdx].x = 10
+    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+    renderCanvas()
+}
+
+
+function alignToCenter() {
+    if (gMeme.selectedLineIdx === -1)
+        return
+    gMeme.lines[gMeme.selectedLineIdx].x = Math.floor(gCanvas.width / 2)
+    gMeme.lines[gMeme.selectedLineIdx].y = Math.floor(gCanvas.height / 2)
+    gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+    renderCanvas()
+}
+
+
+function alignToRight() {
+    if (gMeme.selectedLineIdx === -1)
+        return
+    gMeme.lines[gMeme.selectedLineIdx].x = gCanvas.width - 100
+    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+    renderCanvas()
+}
+
+
+
 
 
 function removeLine() {
@@ -92,7 +122,7 @@ function removeLine() {
     } else {
         gMeme.selectedLineIdx--
     }
-    aaaaaa()
+    addTxtToInput()
     renderCanvas()
 }
 
@@ -113,7 +143,7 @@ function clearCanvas(x, y) {
 
 
 
-function aaaaaa() {
+function addTxtToInput() {
     var elTxt = document.querySelector('[name=txt-input-first]')
     if (gMeme.selectedLineIdx > - 1) {
         elTxt.value = gMeme.lines[gMeme.selectedLineIdx].txt

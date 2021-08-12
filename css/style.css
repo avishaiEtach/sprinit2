@@ -109,7 +109,20 @@ display: none;
 height: 60vh;
 }
 
-/* footr */
+
+.paint img{
+    width: 30px;
+    height: 30px;
+}
+
+.meme-canvas{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+}
+
+
+
 
 .main-footer{
     background-color: #ff7f00;
@@ -119,11 +132,6 @@ height: 60vh;
 }
 
 
-.meme-canvas{
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-}
 
 
 

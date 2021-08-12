@@ -41,12 +41,18 @@ function showCanvas(el) {
 }
 
 
+function colorPiker(el) {
+    gMeme.lines[gMeme.selectedLineIdx].color = el.value
+    renderCanvas()
+}
+
+
 
 
 function renderCanvas() {
     gCtx.drawImage(gCurrrctImg, 0, 0, gCanvas.width, gCanvas.height)
     gMeme.lines.forEach(line => {
-        drawText(line.txt, line.x, line.y, line.size)
+        drawText(line.txt, line.x, line.y, line.size, line.color)
     })
 
 }
@@ -61,19 +67,19 @@ function OnAddtext() {
         getLineObj(txt)
     )
     gMeme.selectedLineIdx = gMeme.lines.length - 1
-    aaaaaa();
+    addTxtToInput();
     renderCanvas()
 }
 
 
 
-function drawText(txt, x, y, size) {
+function drawText(txt, x, y, size, color) {
     gCtx.beginPath();
     gCtx.font = `${size}px IMPACT`;
     gCtx.fillText(txt, x, y);
     gCtx.lineWidth = 2
-    gCtx.strokeStyle = 'brown'
-    gCtx.fillStyle = 'white'
+    gCtx.strokeStyle = 'white'
+    gCtx.fillStyle = `${color}`
     gCtx.font = `${size}px IMPACT`
     gCtx.fillText(txt, x, y)
     gCtx.strokeText(txt, x, y)
