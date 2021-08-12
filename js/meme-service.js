@@ -84,8 +84,8 @@ function downPos() {
 function alignToLeft() {
     if (gMeme.selectedLineIdx === -1)
         return
-    gMeme.lines[gMeme.selectedLineIdx].x = 10
     gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+    gMeme.lines[gMeme.selectedLineIdx].x = 10
     renderCanvas()
 }
 
@@ -93,9 +93,9 @@ function alignToLeft() {
 function alignToCenter() {
     if (gMeme.selectedLineIdx === -1)
         return
-    gMeme.lines[gMeme.selectedLineIdx].x = Math.floor(gCanvas.width / 2)
-    gMeme.lines[gMeme.selectedLineIdx].y = Math.floor(gCanvas.height / 2)
     gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+    gMeme.lines[gMeme.selectedLineIdx].x = gCanvas.width / 2
+    gMeme.lines[gMeme.selectedLineIdx].y = gCanvas.height / 2
     renderCanvas()
 }
 
@@ -103,8 +103,8 @@ function alignToCenter() {
 function alignToRight() {
     if (gMeme.selectedLineIdx === -1)
         return
-    gMeme.lines[gMeme.selectedLineIdx].x = gCanvas.width - 100
     gMeme.lines[gMeme.selectedLineIdx].align = 'right'
+    gMeme.lines[gMeme.selectedLineIdx].x = gCanvas.width
     renderCanvas()
 }
 

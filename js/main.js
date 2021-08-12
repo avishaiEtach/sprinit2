@@ -53,7 +53,7 @@ function colorPiker(el) {
 function renderCanvas() {
     gCtx.drawImage(gCurrrctImg, 0, 0, gCanvas.width, gCanvas.height)
     gMeme.lines.forEach(line => {
-        drawText(line.txt, line.x, line.y, line.size, line.color)
+        drawText(line.txt, line.x, line.y, line.size, line.align, line.color)
     })
 
 }
@@ -74,8 +74,9 @@ function OnAddtext() {
 
 
 
-function drawText(txt, x, y, size, color) {
+function drawText(txt, x, y, size, align, color) {
     gCtx.beginPath();
+    gCtx.textAlign = `${align}`
     gCtx.font = `${size}px IMPACT`;
     gCtx.fillText(txt, x, y);
     gCtx.lineWidth = 2
