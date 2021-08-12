@@ -24,18 +24,19 @@
         <div class="meme-maker">
             <canvas class="meme-canvas"></canvas>
             <div class="meme-maker-continer">
-                <label>firstline</label>
-                <input type="text" name="txt-input-first">
-                <button onclick="OnAddtext()" class="addText"><img src="DESIGN/ICONS/add.png"> </button>
-                <label>scoundline</label>
-                <input type="text" name="txt-input-secound">
-                <button onclick="OnAddtextToSecound()" class="addText"><img src="DESIGN/ICONS/add.png"> </button>
-                <button onclick="upSize()" class="addText"><img src="DESIGN/ICONS/increase font - icon.png"> </button>
+                <!-- <label>firstline</label> -->
+                <input type="text" name="txt-input-first" placeholder="Enter a text">
+                <button onclick="OnAddtext(this)" class="addText"><img src="DESIGN/ICONS/add.png"> </button>
+                <!-- <label>scoundline</label>
+                <input type="text" name="txt-input-secound"> -->
+                <!-- <button onclick="OnAddtextToSecound()" class="addText"><img src="DESIGN/ICONS/add.png"> </button> -->
+                <button onclick="AddSize()" class="addText"><img src="DESIGN/ICONS/increase font - icon.png"> </button>
                 <button onclick="downSize()" class="addText"><img src="DESIGN/ICONS/decrease font - icon.png"> </button>
                 <button onclick="upPos()" class="addText"><img src="DESIGN/ICONS/up.png"> </button>
                 <button onclick="downPos()" class="addText"><img src="DESIGN/ICONS/down.png"> </button>
-                <button onclick="downPos()" class="addText"><img
+                <button onclick="changeLine()" class="addText"><img
                         src="DESIGN/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"> </button>
+                <button onclick="removeLine()" class="addText"><img src="DESIGN/ICONS/trash.png"> </button>
             </div>
         </div>
     </main>
