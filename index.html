@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Memegen</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,47 +13,80 @@
     <header class=" main-header flex align-center space-between">
         <div class="logo"><img src="imgs/LOGO/LOGO.png"></div>
         <ul class="nav-bar flex clean-list">
-            <li><a href="#">Gallery</a></li>
-            <li><a href="#">My Mems</a></li>
-            <li><a href="#">About</a></li>
+            <li class="close"><button onclick="onToggleManu()">X</button></li>
+            <li><a class="active" href="#gallery" onclick="closeCanvas()">Gallery</a></li>
+            <li><a href="">My Memes</a></li>
+            <li><a href="#info">About</a></li>
         </ul>
+        <button class="btn-manu-toggle" onclick="onToggleManu()"> Ξ </button>
     </header>
-    <section class="filter-bar">filter</section>
     <main class="main-sction">
-        <div class="gallery"></div>
-        <div class="meme-maker">
-            <canvas class="meme-canvas"></canvas>
+        <div id="gallery" class="gallery"></div>
+        <div class="meme-maker ">
             <div class="meme-maker-continer">
-                <!-- <label>firstline</label> -->
-                <input type="text" name="txt-input-first" oninput="getTxt(this)" placeholder="Enter a text">
-                <button onclick="OnAddtext(this)" class="addText"><img src="DESIGN/ICONS/add.png"> </button>
-                <!-- <label>scoundline</label>
-                <input type="text" name="txt-input-secound"> -->
-                <!-- <button onclick="OnAddtextToSecound()" class="addText"><img src="DESIGN/ICONS/add.png"> </button> -->
-                <button onclick="AddSize()" class="addText"><img src="DESIGN/ICONS/increase font - icon.png"> </button>
-                <button onclick="downSize()" class="addText"><img src="DESIGN/ICONS/decrease font - icon.png"> </button>
-                <button onclick="upPos()" class="addText"><img src="DESIGN/ICONS/up.png"> </button>
-                <button onclick="downPos()" class="addText"><img src="DESIGN/ICONS/down.png"> </button>
-                <button onclick="changeLine()" class="addText"><img
-                        src="DESIGN/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"> </button>
-                <button onclick="removeLine()" class="addText"><img src="DESIGN/ICONS/trash.png"> </button>
-                <button onclick="alignToLeft()" class="addText"><img src="DESIGN/ICONS/align-to-left.png"> </button>
-                <button onclick="alignToCenter()" class="addText"><img src="DESIGN/ICONS/center-text-alignment.png">
-                    <button onclick="alignToRight()" class="addText"><img
-                            src="DESIGN/ICONS/align-to-right.png"></button>
-                    <!-- <button class="paint"> -->
-                    <!-- <img src="DESIGN/ICONS/paint-board-and-brush.png"> -->
-                    <input type="color" name="color-piker" oninput="colorPiker(this)" class="color-piker">
-                    <!-- </button> -->
+                <canvas class="meme-canvas"></canvas>
+                <div class="meme-maker-control">
+                    <input type="text" name="txt-input-first" class="border-radius" oninput="getTxt(this)"
+                        placeholder="Enter a text">
+                    <button onclick="OnAddtext(this)" class="addText border-radius"><img src="DESIGN/ICONS/add.png">
+                    </button>
+                    <button onclick="AddSize()" class="increase-font border-radius"><img
+                            src="DESIGN/ICONS/increase font - icon.png">
+                    </button>
+                    <button onclick="downSize()" class="decrease-font border-radius"><img
+                            src="DESIGN/ICONS/decrease font - icon.png">
+                    </button>
+                    <button onclick="upPos()" class="txt-up border-radius"><img src="DESIGN/ICONS/up.png"> </button>
+                    <button onclick="downPos()" class="txt-down border-radius"><img src="DESIGN/ICONS/down.png">
+                    </button>
+                    <button onclick="changeLine()" class="swichRows border-radius"><img
+                            src="DESIGN/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"> </button>
+                    <button onclick="removeLine()" class="remove-txt border-radius"><img src="DESIGN/ICONS/trash.png">
+                    </button>
+                    <button onclick="alignToLeft()" class="align-to-left border-radius"><img
+                            src="DESIGN/ICONS/align-to-left.png">
+                    </button>
+                    <button onclick="alignToCenter()" class="align-to-center border-radius"><img
+                            src="DESIGN/ICONS/center-text-alignment.png">
+                        <button onclick="alignToRight()" class="align-to-right border-radius"><img
+                                src="DESIGN/ICONS/align-to-right.png"></button>
+                        <input type="color" name="color-piker border-radius" oninput="colorPiker(this)"
+                            class="color-piker">
+                        <select name="fonts" class="border-radius" onclick="changeFont()">
+                            <option value="IMPACT">IMPACT</option>
+                            <option value="comic-neue">Comic Neue</option>
+                            <option value="Arial">Arial</option>
+                        </select>
 
+                        <button onclick="changeStrock()" class="strocke border-radius" class="">S</button>
+                        <button class="download-img border-radius"><a href="#" onclick="downloadImg(this)"
+                                download="my-img.jpg">Download</a></button>
 
+                </div>
             </div>
         </div>
     </main>
-    <section class="info">info</section>
+    <section id="info" class="info flex align-center">
+        <div class="info-img">
+            <img src="/imgs/5.jpg" alt="">
+        </div>
+        <div class="info-txt">
+            <h2>avishai etach</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit! </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit! </p>
+            <div class="links">
+                <ul class="links-list flex ">
+                    <li><a href=""><img src="DESIGN/ICONS/linkedin-logo.png" alt=""></a></li>
+                    <li><a href=""><img src="DESIGN/ICONS/facebook-logo.png" alt=""></a></li>
+                    <li><a href=""><img src="DESIGN/ICONS/github-logo.png" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
     <footer class="main-footer flex align-center">
         <div class="logo"><img src="imgs/LOGO/LOGO.png"></div>
-        <p>sdsdsdssd</p>
+        <p>&copy;copyRithing to avishai etach</p>
     </footer>
 </body>
 <script src="js/imgs-service.js"></script>

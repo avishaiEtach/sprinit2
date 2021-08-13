@@ -16,15 +16,36 @@ function changeTxt(txt) {
 }
 
 function getLineObj(txt) {
-
-    var line = {
-        txt: txt,
-        size: 30,
-        align: 'left',
-        color: 'black',
-        x: gx,
-        y: gy
+    if (glineMunber === 0) {
+        var line = {
+            txt: txt,
+            size: 30,
+            align: 'center',
+            color: 'black',
+            x: Math.floor(gCanvas.width / 2),
+            y: 30
+        }
     }
+    else if (glineMunber === 1) {
+        var line = {
+            txt: txt,
+            size: 30,
+            align: 'center',
+            color: 'black',
+            x: Math.floor(gCanvas.width / 2),
+            y: gCanvas.height - 10
+        }
+    } else {
+        var line = {
+            txt: txt,
+            size: 30,
+            align: 'center',
+            color: 'black',
+            x: Math.floor(gCanvas.width / 2),
+            y: Math.floor(gCanvas.height / 2)
+        }
+    }
+
     return line
 
 }
@@ -85,7 +106,7 @@ function alignToLeft() {
     if (gMeme.selectedLineIdx === -1)
         return
     gMeme.lines[gMeme.selectedLineIdx].align = 'left'
-    gMeme.lines[gMeme.selectedLineIdx].x = 10
+    gMeme.lines[gMeme.selectedLineIdx].x = 0
     renderCanvas()
 }
 
@@ -95,7 +116,6 @@ function alignToCenter() {
         return
     gMeme.lines[gMeme.selectedLineIdx].align = 'center'
     gMeme.lines[gMeme.selectedLineIdx].x = gCanvas.width / 2
-    gMeme.lines[gMeme.selectedLineIdx].y = gCanvas.height / 2
     renderCanvas()
 }
 
@@ -129,18 +149,10 @@ function removeLine() {
 
 function drawRect(x, y) {
     gCtx.beginPath()
-    gCtx.rect(x - 10, y - 40, gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx]).width, 50)
+    gCtx.rect(x, y, gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx]).width, gMeme.lines[gMeme.selectedLineIdx].size)
     gCtx.strokeStyle = 'rgb(0,0,255)'
     gCtx.stroke()
 }
-
-
-function clearCanvas(x, y) {
-    gCtx.clearRect(x, y, gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx]).width, 50)
-
-}
-
-
 
 
 function addTxtToInput() {
@@ -152,4 +164,7 @@ function addTxtToInput() {
         elTxt.value = ''
     }
 }
+
+
+
 
